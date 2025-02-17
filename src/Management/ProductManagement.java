@@ -3,7 +3,8 @@ package Management;
 import java.util.Scanner;
 
 import DAO.ProductDAO;
-import DAO.ProductDBbySQL;
+import DAO.ProductDBbyGCS;
+import DAO.CustomerDBbyGCSQL;
 import Model.Customer;
 import Model.Product;
 

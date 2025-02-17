@@ -1,10 +1,8 @@
 package View;
 
 import javax.swing.*;
-
 import DAO.ProductDBbySQL;
 import Model.Customer;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

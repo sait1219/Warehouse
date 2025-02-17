@@ -7,7 +7,8 @@ import java.awt.event.WindowListener;
 import javax.swing.DefaultListModel;
 
 import DAO.ProductDAO;
-import DAO.ProductDBbySQL;
+import DAO.ProductDBbyGCSQL;
+import DAO.ProductDBbyGCS;
 import DAO.ProductDBinMemory;
 
 import javax.swing.*;
@@ -121,6 +122,20 @@ public class MainController {
             public void windowDeactivated(WindowEvent e) { }
         });
     }
+
+    public void compareProducts() {
+    long startTime = System.currentTimeMillis();
+
+    List<Product> productsFromGCS = productDB.getAllProducts();
+    List<Product> productsFromSQL = customerDB.getAllProducts();
+
+    boolean isAccurate = productsFromGCS.equals(productsFromSQL);
+
+    long endTime = System.currentTimeMillis();
+    System.out.println("Operation took " + (endTime - startTime) + " milliseconds");
+    System.out.println("Accuracy: " + isAccurate);
+}
+
     
     
     private void CreatenewProductButtonOnClick(ActionEvent e) {
@@ -157,7 +172,8 @@ public class MainController {
     public static void main(String[] args) {
         new MainController(
            // new ProductDBinMemory(),
-            new ProductDBbySQL(),
+            ProductDBbyGCSQL,
+             ProductDBbyGCS,
             new MainView()
         );
     }

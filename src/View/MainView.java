@@ -26,7 +26,7 @@ public class MainView extends JFrame implements MainViewInterface
     private JButton dispatchstockButton = new JButton("Disptch");
     private JButton createnewcustomerButton = new JButton("Create Customer");
     private JButton listcustomersButton = new JButton("List all customers");
-    private JButton okButton = new JButton("Okay");
+    
 
     public MainView() {
         setTitle("Main");
